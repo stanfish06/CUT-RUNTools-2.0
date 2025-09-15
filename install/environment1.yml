@@ -8,7 +8,7 @@ dependencies:
 - bioinfo:macs2
 - bioconda::bedops
 - bioconda::bedtools
-- bioconda::deeptools
+- bioconda::deeptools=3.5.2
 - conda-forge::parallel
 - bioconda::tabix
 - pip
