@@ -109,6 +109,8 @@ pip list | grep umap
 
 We also provided special notes for **Atactk** and **kseq**, **the installation files were already included in the packages**.
 
+Log: I slightly modified the scirpt so it installs atactk into a conda env
+
 Make all the files excutable.  
 ```
 chmod -R +x ./install

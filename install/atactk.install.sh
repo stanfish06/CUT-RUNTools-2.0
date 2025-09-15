@@ -7,7 +7,7 @@ git clone https://github.com/ParkerLab/atactk
 cd atactk
 git checkout 6cd7de0
 cd ..
-pip install --user ./atactk
+pip install ./atactk --no-build-isolation
 cd ..
 
 cd ~/.local/bin
@@ -18,7 +18,7 @@ then
 patch -p0 -N make_cut_matrix < make_cut_matrix.patch
 fi
 
-cd ~/.local/lib/python3.6/site-packages/atactk
+cd ~/.conda/envs/atactk/lib/python3.6/site-packages/atactk
 cp $cur/metrics.py.patch .
 patch -p0 -N --dry-run --silent metrics.py < metrics.py.patch 2> /dev/null
 if [ $? -eq 0 ];

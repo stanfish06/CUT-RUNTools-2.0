@@ -1,0 +1,53 @@
+{
+  "software_config": {
+    "Rscriptbin": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "pythonbin": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "perlbin": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "javabin": "/home/zyyu/.sdkman/candidates/java/current/bin",
+    "bowtie2bin": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "samtoolsbin": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "macs2bin": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "memebin": "/home/zyyu/.conda/envs/meme/bin",
+    "bedopsbin": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "bedtoolsbin": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "path_deeptools": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "path_parallel": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "path_tabix": "/home/zyyu/.conda/envs/cutruntools2.1/bin",
+    "bt2idx": "/home/zyyu/Git/CUT-RUNTools-2.0/install/assemblies/hg38/bowtie/GRCh38_noalt_as",
+    "genome_sequence": "/home/zyyu/Git/CUT-RUNTools-2.0/install/assemblies/hg38/hg38.fa",
+    "spike_in_bt2idx": "/gcdata/gcproj/fulong/Data/Genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/Bowtie2Index",
+    "spike_in_sequence": "/gcdata/gcproj/fulong/Data/Genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/WholeGenomeFasta/genome.fa",
+    "extratoolsbin": "/home/zyyu/Git/CUT-RUNTools-2.0/install",
+    "extrasettings": "/home/zyyu/Git/CUT-RUNTools-2.0/install",
+    "kseqbin": "/home/zyyu/Git/CUT-RUNTools-2.0/install",
+    "adapterpath": "/home/zyyu/Git/CUT-RUNTools-2.0/adapters",
+    "trimmomaticbin": "/home/zyyu/Git/CUT-RUNTools-2.0/install",
+    "picardbin": "/home/zyyu/Git/CUT-RUNTools-2.0/install",
+    "bdg2bwbin": "/home/zyyu/Git/CUT-RUNTools-2.0/install",
+    "picardjarfile": "picard-2.8.0.jar",
+    "trimmomaticjarfile": "trimmomatic-0.36.jar",
+    "makecutmatrixbin": "/home/zyyu/.local/bin"
+  },
+  "input_output": {
+    "fastq_directory": "/gcdata/gcproj/fulong/Software/cutrun-test/CUT-RUNTools-2.0/exampleData",
+    "workdir": "/gcdata/gcproj/fulong/Software/cutrun-test/bulk-example-test",
+    "fastq_sequence_length": "150",
+    "organism_build": "hg38",
+    "spike_in": "FALSE",
+    "spike_in_norm": "FALSE",
+    "spikein_scale": "10000",
+    "frag_120": "TRUE",
+    "peak_caller": "macs2",
+    "dup_peak_calling": "FALSE",
+    "cores": "8",
+    "experiment_type": "CUT&RUN",
+    "adaptor_type": "Nebnext"
+  },
+  "motif_finding": {
+    "num_bp_from_summit": "100",
+    "num_peaks": "1000",
+    "total_peaks": "2000",
+    "motif_scanning_pval": "0.0005",
+    "num_motifs": "10"
+  }
+}
