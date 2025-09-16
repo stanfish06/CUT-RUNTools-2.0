@@ -86,5 +86,7 @@ echo "==================================== Bulk data analysis pipeline will run 
     echo -e "================================================================================================================================="
 
 
+# slurm job messes scriptdir, use absolute path if that happens
+scriptdir=/home/zyyu/Git/CUT-RUNTools-2.0/src/bulk
 . $scriptdir/bulk-pipeline.sh
 
