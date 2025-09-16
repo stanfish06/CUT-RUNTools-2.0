@@ -1,0 +1,10 @@
+9/15/25
+- spike-in index should have prefix "genome"
+- reference index should have prefix the same as "organism_build" in config
+- this tool currently only supports one-sample-per-run
+- setup steps:
+  + creates venv for cutruntool and meme
+  + download reference genome using the given script
+  + download spike-in genome from illumina igenome (Escherichia coli strain K12, MG1655) 
+  + mpi desktop is needed to run meme on umich hpc
+

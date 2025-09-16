@@ -32,7 +32,7 @@
     "fastq_directory": "/gcdata/gcproj/fulong/Software/cutrun-test/CUT-RUNTools-2.0/exampleData",
     "workdir": "/gcdata/gcproj/fulong/Software/cutrun-test/bulk-example-test",
     "fastq_sequence_length": "150",
-    "organism_build": "hg38",
+    "organism_build": "hg19",
     "spike_in": "FALSE",
     "spike_in_norm": "FALSE",
     "spikein_scale": "10000",
@@ -41,7 +41,8 @@
     "dup_peak_calling": "FALSE",
     "cores": "8",
     "experiment_type": "CUT&RUN",
-    "adaptor_type": "Nebnext"
+    "adaptor_type": "Nebnext",
+    "skip_meme": "TRUE"
   },
   "motif_finding": {
     "num_bp_from_summit": "100",

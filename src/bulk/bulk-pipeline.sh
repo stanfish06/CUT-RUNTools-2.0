@@ -356,6 +356,12 @@ $bedopsbin/bedops --range $num_bp_from_summit -u $msummit/$summit > $mpadded/$su
 >&2 echo "[info] Getting Fasta sequences"
 $bedtoolsbin/bedtools getfasta -fi $genome_sequence -bed $mpadded/$summit -fo $mpaddedfa/$summitfa
 
+if [ "$skip_meme" == "TRUE" ]
+then
+    echo "Done. Skip meme."
+    exit 0
+fi
+
 >&2 echo "[info] Start MEME analysis for de novo motif finding ..."
 >&2 echo "[info] Up to $num_motifs will be output ..."
 meme_outdir=$motif_dir/MEME_"$fname"_shuf
