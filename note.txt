@@ -8,3 +8,27 @@
   + download spike-in genome from illumina igenome (Escherichia coli strain K12, MG1655) 
   + mpi desktop is needed to run meme on umich hpc
 
+6/1/26 - new run: H3K27ac CUT&Tag (histone), single sample, hg19, NO spike-in
+- genome prep:
+  + downloaded genome with the install script, run from repo ROOT so it lands in assemblies/hg19/ (where config points):
+      install/assemblies.install.sh hg19 /home/zyyu/.conda/envs/cutruntools2.1/bin
+    -> gives assemblies/hg19/hg19.fa (+ .fai). (this is the UCSC repeat-masked genome)
+  + that script does NOT build a bowtie2 index, so build it separately:
+      conda activate cutruntools2.1
+      bowtie2-build --threads 12 assemblies/hg19/hg19.fa assemblies/hg19/bowtie/hg19
+  + config: bt2idx -> assemblies/hg19/bowtie , genome_sequence -> assemblies/hg19/hg19.fa
+  + hg19 chrom.sizes + blacklist already in repo (assemblies/chrom.hg19/, blacklist/)
+- compile kseq_test (2nd-stage 3' trimmer, pipeline calls it automatically; not compiled in a fresh repo copy):
+      gcc -O2 install/kseq_test.c -lz -o install/kseq_test
+- config (config/my-bulk-config.json) for CUT&Tag:
+  + experiment_type = "CUT&Tag"
+  + frag_120 = FALSE
+  + spike_in = FALSE, spike_in_norm = FALSE, skip_meme = TRUE, fastq_sequence_length = 150
+  + had to repoint all /home/zyyu/Git/CUT-RUNTools-2.0/... paths -> this gpfs repo path
+  + adaptor_type = Nextera. uses adapters/NexteraPE-PE.fa
+- hardcoded path: run_bulkModule.sh (~line 90) forces scriptdir=...; must point to THIS repo's src/bulk
+- fastq naming: pipeline reads <sample>_R1_001.fastq.gz / _R2_001.fastq.gz
+  + Novogene files are _1.fq.gz / _2.fq.gz -> made symlinks instead of renaming
+  + sample name = Stan_CKDL260001448-1A_237W2VLT3_L1
+- run: source run_bulkModule.sh <repo>/config/my-bulk-config.json <sample>
+
