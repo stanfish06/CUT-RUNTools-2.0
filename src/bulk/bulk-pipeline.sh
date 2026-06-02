@@ -59,8 +59,15 @@ fi
 
 >&2 echo "[info] Second stage trimming $base ..."
 >&2 date
-$kseqbin/kseq_test $trimdir/"$base"_1.paired.fastq.gz $len $trimdir2/"$base"_1.paired.fastq.gz
-$kseqbin/kseq_test $trimdir/"$base"_2.paired.fastq.gz $len $trimdir2/"$base"_2.paired.fastq.gz
+if [ "$skip_second_trim" == "TRUE" ]
+then
+    >&2 echo "[info] skip_second_trim=TRUE -> skipping kseq_test; using Trimmomatic output directly"
+    ln -sf $trimdir/"$base"_1.paired.fastq.gz $trimdir2/"$base"_1.paired.fastq.gz
+    ln -sf $trimdir/"$base"_2.paired.fastq.gz $trimdir2/"$base"_2.paired.fastq.gz
+else
+    $kseqbin/kseq_test $trimdir/"$base"_1.paired.fastq.gz $len $trimdir2/"$base"_1.paired.fastq.gz
+    $kseqbin/kseq_test $trimdir/"$base"_2.paired.fastq.gz $len $trimdir2/"$base"_2.paired.fastq.gz
+fi
 
 >&2 echo "[info] Aligning file $base to reference genome..."
 >&2 date
